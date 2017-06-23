@@ -8,7 +8,7 @@
 function Demo(pkx, module, configuration) {
     var self = this;
 
-    var embedded = require("cc.demo.embedded/");
+    var embedded = require("cc.demo.embedded/"); 
 
     this.getVersion = function() {
         return pkx.version;
