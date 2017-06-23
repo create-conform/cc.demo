@@ -8,7 +8,9 @@
 function Demo(pkx, module, configuration) {
     var self = this;
 
-    var embedded = require("cc.demo.embedded/"); 
+    console.log("Module Configuration: ", JSON.stringify(configuration, null, "  "));
+
+    var embedded = require("cc.demo.embedded/");
 
     this.getVersion = function() {
         return pkx.version;
