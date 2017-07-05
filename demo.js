@@ -8,6 +8,8 @@
 function Demo(pkx, module, configuration) {
     var self = this;
 
+    var io = require("cc.io/");
+
     console.log("Module Configuration: ", JSON.stringify(configuration, null, "  "));
 
     var embedded = require("cc.demo.embedded/");
@@ -26,6 +28,12 @@ function Demo(pkx, module, configuration) {
 
     console.log(self.whoami());
     console.log(embedded.whoami());
+
+    console.log("CWD: " + io.URI.parse("./"));
+
+    io.URI.open("package.json").then(function(stream) {
+        stream.readAsJSON().then(console.log, console.error);
+    }, console.error);
 }
 // module factory
 define(function() {
